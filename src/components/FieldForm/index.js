@@ -14,6 +14,7 @@ const Form = (props) => {
     const createTeamMember = (event) => {
        event.preventDefault()
        console.log("submit form: " ,name, sector, picture, teamName)
+       props.saveNewTeamMember({name, sector, picture, teamName})
 
        setName('')
        setSector('')

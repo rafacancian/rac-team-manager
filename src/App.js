@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Banner from './components/Banner';
 import FieldForm from './components/FieldForm';
 
@@ -41,10 +42,18 @@ function App() {
     }
   ]
 
+  const [teamMembers, setTeamMembers] = useState([])
+
+  const saveTeamMember = (teamMember) =>{
+    setTeamMembers([...teamMembers, teamMember])
+    console.log(teamMembers)
+  }
+
   return (
     <div className="App">
           <Banner />
-          <FieldForm teams={teams}/>
+          <FieldForm teams={teams}
+            saveNewTeamMember={teamMember => saveTeamMember(teamMember)}/>
     </div>
   );
 }
