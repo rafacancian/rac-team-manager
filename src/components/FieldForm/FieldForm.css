@@ -1,0 +1,13 @@
+.field-form {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.field-form form {
+    max-width: 80%;
+    background-color: #E5F7FE;
+    border-radius: 20px;
+    padding: 36px 64px;
+    box-shadow: 8px 8px 16px rgba(0,0,0, 0.08);
+}
