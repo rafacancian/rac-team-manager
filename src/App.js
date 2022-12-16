@@ -1,59 +1,70 @@
 import { useState } from 'react';
 import Banner from './components/Banner';
 import FieldForm from './components/FieldForm';
+import Team from './components/Team';
 
 function App() {
 
    const teams = [
     {
       name: 'Java Developer',
-      corPrimaria: '#57C278',
-      corSecundaria: '#D9F7E9'
+      firstColor: '#57C278',
+      secondColor: '#D9F7E9'
     },
     {
       name: 'Front-End',
-      corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF'
+      firstColor: '#82CFFA',
+      secondColor: '#E8F8FF'
     },
     {
       name: 'Data Science',
-      corPrimaria: '#A6D157',
-      corSecundaria: '#F0F8E2'
+      firstColor: '#A6D157',
+      secondColor: '#F0F8E2'
     },
     {
       name: 'Devops',
-      corPrimaria: '#E06B69',
-      corSecundaria: '#FDE7E8'
+      firstColor: '#E06B69',
+      secondColor: '#FDE7E8'
     },
     {
       name: 'UX e Design',
-      corPrimaria: '#DB6EBF',
-      corSecundaria: '#FAE9F5'
+      firstColor: '#DB6EBF',
+      secondColor: '#FAE9F5'
     },
     {
       name: 'Mobile',
-      corPrimaria: '#FFBA05',
-      corSecundaria: '#FFF5D9'
+      firstColor: '#FFBA05',
+      secondColor: '#FFF5D9'
     },
     {
       name: 'Inovation and Management',
-      corPrimaria: '#FF8A29',
-      corSecundaria: '#FFEEDF'
+      firstColor: '#FF8A29',
+      secondColor: '#FFEEDF'
     }
   ]
 
-  const [teamMembers, setTeamMembers] = useState([])
+  const [collaborators, setCollaborators] = useState([])
 
-  const saveTeamMember = (teamMember) =>{
-    setTeamMembers([...teamMembers, teamMember])
-    console.log(teamMembers)
+  const saveCollaborator = (collaborator) =>{
+    setCollaborators([...collaborators, collaborator])
   }
 
   return (
     <div className="App">
           <Banner />
-          <FieldForm teams={teams}
-            saveNewTeamMember={teamMember => saveTeamMember(teamMember)}/>
+          <FieldForm teams={teams.map(team => team.name)}
+            saveNewCollaborator={collaborator => saveCollaborator(collaborator)}/>
+
+           {teams.map(team =>
+           <Team
+              key={team.name}
+              name={team.name}
+              firstColor={team.firstColor}
+              secondColor={team.secondColor}
+              collaborators={collaborators.filter(collaborator => collaborator.team === teams.name)}
+            />)}
+
+
     </div>
   );
 }
