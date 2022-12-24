@@ -74,3 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Install React Icons
 npm install react-icons --save
 https://react-icons.github.io/react-icons/
+
+Install hex to RGBA - used to set a second color in team members
+npm i hex-to-rgba
+https://www.npmjs.com/package/hex-to-rgba

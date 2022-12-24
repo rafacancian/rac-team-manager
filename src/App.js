@@ -5,43 +5,36 @@ import Team from './components/Team';
 
 function App() {
 
-   const teams = [
+   const [teams, setTeams] = useState([
     {
       name: 'Java Developer',
-      firstColor: '#57C278',
-      secondColor: '#D9F7E9'
+      color: '#57C278'
     },
     {
       name: 'Front-End',
-      firstColor: '#82CFFA',
-      secondColor: '#E8F8FF'
+      color: '#82CFFA'
     },
     {
       name: 'Data Science',
-      firstColor: '#A6D157',
-      secondColor: '#F0F8E2'
+      color: '#A6D157'
     },
     {
       name: 'Devops',
-      firstColor: '#E06B69',
-      secondColor: '#FDE7E8'
+      color: '#E06B69'
     },
     {
       name: 'UX e Design',
-      firstColor: '#DB6EBF',
-      secondColor: '#FAE9F5'
+      color: '#DB6EBF'
     },
     {
       name: 'Mobile',
-      firstColor: '#FFBA05',
-      secondColor: '#FFF5D9'
+      color: '#FFBA05'
     },
     {
       name: 'Inovation and Management',
-      firstColor: '#FF8A29',
-      secondColor: '#FFEEDF'
+      color: '#FF8A29'
     }
-  ]
+  ])
 
   const [collaborators, setCollaborators] = useState([])
 
@@ -51,6 +44,15 @@ function App() {
 
   function deleteCollaborator(){
     console.log("delete collaborator");
+  }
+
+  function changeTeamColor(newColor, teamName) {
+    setTeams(teams.map(team => {
+        if(team.name === teamName) {
+            team.color = newColor;
+        }
+        return team;
+    }))
   }
 
   return (
@@ -63,10 +65,10 @@ function App() {
            <Team
               key={team.name}
               name={team.name}
-              firstColor={team.firstColor}
-              secondColor={team.secondColor}
+              color={team.color}
               collaborators={collaborators.filter(collaborator => collaborator.teamName === team.name)}
               toDelete={deleteCollaborator}
+              changeColor={changeTeamColor}
             />)}
 
 
