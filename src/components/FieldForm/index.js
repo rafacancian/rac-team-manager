@@ -3,6 +3,7 @@ import './FieldForm.css'
 import FieldText from '../FieldText'
 import FieldListBox from '../FieldListBox'
 import Button from '../Button'
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = (props) => {
 
@@ -13,8 +14,9 @@ const Form = (props) => {
 
     const createCollaborator = (event) => {
        event.preventDefault()
+       const id = uuidv4();
        console.log("submit form: " ,name, sector, picture, teamName)
-       props.saveNewCollaborator({name, sector, picture, teamName})
+       props.saveNewCollaborator({id, name, sector, picture, teamName})
 
        setName('')
        setSector('')

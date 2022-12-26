@@ -2,35 +2,43 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import FieldForm from './components/FieldForm';
 import Team from './components/Team';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
    const [teams, setTeams] = useState([
     {
+      id: uuidv4(),
       name: 'Java Developer',
       color: '#57C278'
     },
     {
+      id: uuidv4(),
       name: 'Front-End',
       color: '#82CFFA'
     },
     {
+      id: uuidv4(),
       name: 'Data Science',
       color: '#A6D157'
     },
     {
+      id: uuidv4(),
       name: 'Devops',
       color: '#E06B69'
     },
     {
+      id: uuidv4(),
       name: 'UX e Design',
       color: '#DB6EBF'
     },
     {
+      id: uuidv4(),
       name: 'Mobile',
       color: '#FFBA05'
     },
     {
+      id: uuidv4(),
       name: 'Inovation and Management',
       color: '#FF8A29'
     }
@@ -46,9 +54,9 @@ function App() {
     console.log("delete collaborator");
   }
 
-  function changeTeamColor(newColor, teamName) {
+  function changeTeamColor(newColor, id) {
     setTeams(teams.map(team => {
-        if(team.name === teamName) {
+        if(team.key === id) {
             team.color = newColor;
         }
         return team;
@@ -63,7 +71,7 @@ function App() {
 
            {teams.map(team =>
            <Team
-              key={team.name}
+              key={team.id}
               name={team.name}
               color={team.color}
               collaborators={collaborators.filter(collaborator => collaborator.teamName === team.name)}
