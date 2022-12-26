@@ -12,8 +12,7 @@ const Team = (props) => {
             <h3 style={{ borderColor: props.color }}>{props.name}</h3>
             <div className='collaborators'>
                 {props.collaborators.map(collaborator =>
-                    <Collaborator backgroundColor={props.color} key={collaborator.id} name={collaborator.name}
-                    sector={collaborator.sector} picture={collaborator.picture} toDelete={props.toDelete}/>
+                    <Collaborator  key={collaborator.id} backgroundColor={props.color} collaborator={collaborator} toDelete={props.toDelete}/>
                )}
             </div>
         </section>
