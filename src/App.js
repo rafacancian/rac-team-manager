@@ -63,21 +63,29 @@ function App() {
     }))
   }
 
+  function saveNewTeam(newTime){
+     setTeams([...teams, {...newTime, id: uuidv4()}])
+  }
+
   return (
     <div className="App">
           <Banner />
-          <FieldForm teams={teams.map(team => team.name)}
-            saveNewCollaborator={collaborator => saveCollaborator(collaborator)}/>
+          <FieldForm
+            saveNewTeam={saveNewTeam}
+            teams={teams.map(team => team.name)}
+            saveNewCollaborator={collaborator => saveCollaborator(collaborator)}
+          />
 
-           {teams.map(team =>
-           <Team
+          {teams.map(team =>
+            <Team
               key={team.id}
               name={team.name}
               color={team.color}
               collaborators={collaborators.filter(collaborator => collaborator.teamName === team.name)}
               toDelete={deleteCollaborator}
               changeColor={changeTeamColor}
-            />)}
+            />
+          )}
 
 
     </div>
