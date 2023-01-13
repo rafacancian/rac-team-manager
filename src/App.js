@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import FieldForm from './components/FieldForm';
 import Team from './components/Team';
+import Footer from './components/Footer';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
               changeColor={changeTeamColor}
             />
           )}
-
+            <Footer />
 
     </div>
   );
