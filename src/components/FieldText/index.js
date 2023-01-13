@@ -7,11 +7,11 @@ const FieldText = (props) => {
     }
 
     return (
-        <div className="field-text">
+        <div className={`field-${props.type}`}>
             <label>
                 {props.label}
             </label>
-            <input value={props.value} onChange={updateValue} required={props.required} placeholder={props.placeholder}/>
+            <input type={props.type} value={props.value} onChange={updateValue} required={props.required} placeholder={props.placeholder}/>
         </div>
     )
 }

@@ -34,17 +34,17 @@ const Form = (props) => {
                     event.preventDefault()
                     props.saveNewTeam({name: newTeamName, color: newTeamColor})
                 }}>
-                   <h2>Insert a new Team</h2>
-                      <FieldText value={newTeamName} valueChanged={value => setNewTeamName(value)} required label="Name" placeholder="Digit the name"/>
-                      <FieldText value={newTeamColor} valueChanged={value => setNewTeamColor(value)} required label="Color" placeholder="Digit the color"/>
+                   <h3>Insert a new Team</h3>
+                      <FieldText type="text" value={newTeamName} valueChanged={value => setNewTeamName(value)} required label="Name" placeholder="Digit the name"/>
+                      <FieldText type="color" value={newTeamColor} valueChanged={value => setNewTeamColor(value)} required label="Color" placeholder="Digit the color"/>
                       <Button>Create</Button>
                </form>
 
                <form onSubmit={createCollaborator}>
-                   <h2>Insert a new Collaborator</h2>
-                      <FieldText value={name} valueChanged={value => setName(value)} required={true} label="Name" placeholder="Digit your name"/>
-                      <FieldText value={sector} valueChanged={value => setSector(value)} required={true} label="Sector" placeholder="Digit your Sector"/>
-                      <FieldText value={picture} valueChanged={value => setPicture(value)}  required={true} label="Picture" placeholder="Digit the url picture"/>
+                   <h3>Insert a new Collaborator</h3>
+                      <FieldText type="text" value={name} valueChanged={value => setName(value)} required={true} label="Name" placeholder="Digit your name"/>
+                      <FieldText type="text" value={sector} valueChanged={value => setSector(value)} required={true} label="Sector" placeholder="Digit your Sector"/>
+                      <FieldText type="text" value={picture} valueChanged={value => setPicture(value)}  required={true} label="Picture" placeholder="Digit the url picture"/>
                       <FieldListBox value={teamName} valueChanged={value => setTeamName(value)} required={true} label="Team" itens={props.teams}/>
                       <Button>Create</Button>
                </form>

@@ -1,12 +1,11 @@
 .field-text {
     margin: 24px 0;
-    width: 700px;
 }
 
 .field-text label {
     display: block;
     margin-bottom: 8px;
-    font-size: 24px;
+    font-size: 14px;
 }
 
 .field-text input {
@@ -14,7 +13,26 @@
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
     width: 100%;
     border: none;
-    font-size: 24px;
-    padding: 24px;
+    font-size: 14px;
+    padding: 12px;
     box-sizing: border-box;
 }
+
+.field-color {
+    height: 40px;
+    padding: 5px 0px;
+}
+
+.field-color label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.field-color input {
+    background-color: #FFF;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+        width: 50px;
+        border: none;
+        box-sizing: border-box;
+    }
