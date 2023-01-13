@@ -11,7 +11,7 @@ const Collaborator = ({collaborator, backgroundColor, toDelete }) => {
         <div className='header' style={{ backgroundColor: backgroundColor }}>
             <img src={collaborator.picture} alt={collaborator.name}/>
         </div>
-        <div className='footer'>
+        <div className='collaborator-footer'>
             <h4>{collaborator.name}</h4>
             <h5>{collaborator.sector}</h5>
         </div>
